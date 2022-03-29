@@ -14,7 +14,7 @@ func _on_Enemy_body_entered(body):
 	if ARMOR <= 0: #or ==
 		var main = get_tree().current_scene
 		if main.is_in_group("World"):
-			main.score =+ 10 
+			main.score += 10
 		queue_free()
 
 func _on_VisibilityNotifier2D_screen_exited():
