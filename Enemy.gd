@@ -7,6 +7,11 @@ export(int) var ARMOR = 3
 
 func _process(delta):
 	position.x -= SPEED * delta
+	change_speed()
+	
+func change_speed():
+	if Input.is_action_pressed("press plus"):
+		SPEED += 5
 
 func _on_Enemy_body_entered(body):
 	body.create_hit_effect()
@@ -23,7 +28,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 func add_to_score():
 	var main = get_tree().current_scene
 	if main.is_in_group("World"):
-			main.score += 10
+		main.score += 10
 			
 func create_explosion():
 	var main = get_tree().current_scene
